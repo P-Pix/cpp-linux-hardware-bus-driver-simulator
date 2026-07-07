@@ -1,7 +1,7 @@
 # C++ Linux Hardware Bus Driver Simulator
 
 ![C++ Linux Hardware Bus Driver Simulator banner](Banniere.png)
-Banner generate by ChatGPT
+*Banner generate by ChatGPT*
 
 A C++20 Linux-oriented user-space driver project that communicates with a simulated hardware peripheral over a binary UART/I2C/SPI-like command protocol.
 
