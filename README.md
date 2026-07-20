@@ -1,7 +1,7 @@
 # C++ Linux Hardware Bus Driver Simulator
 
 ![C++ Linux Hardware Bus Driver Simulator banner](Banniere.png)
-*Banner generate by ChatGPT*
+*Banner generated with ChatGPT.*
 
 A C++20 Linux-oriented user-space driver project that communicates with a simulated hardware peripheral over a binary UART/I2C/SPI-like command protocol.
 
@@ -141,10 +141,8 @@ int main() {
 - CMake, CTest and CI/CD.
 - Documentation of protocol and architectural choices.
 
-## Roadmap
+## Engineering scope
 
-- Add a real serial transport based on `termios`.
-- Add SPI/I2C adapters for Raspberry Pi or Linux development boards.
-- Add performance measurements for latency and retries.
-- Add structured JSON logs.
-- Add hardware-in-the-loop tests with Raspberry Pi Pico or Arduino.
+The repository provides a complete, testable user-space driver simulation rather than a Linux kernel module or a board-specific hardware library. Its UNIX domain socket transport makes the full command path reproducible on a standard Linux workstation, while `ITransport` keeps the driver independent from that development transport.
+
+Real serial, SPI or I2C communication can therefore be introduced as an additional `ITransport` implementation without changing the binary protocol, retry policy, device API or existing tests. Hardware-in-the-loop execution is deliberately kept outside the portable reference setup because it requires a specific board and wiring configuration.
